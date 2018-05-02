@@ -1,75 +1,137 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @duanlv26
+Sign out
+0
+0 0 duanlv26/ife.baidu
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+ife.baidu/07/css/ 
+style.css
+  or cancel
+    
+ 
+1
 body {
+2
     font-family:Montserrat;
+3
 }
+4
 .page {
+5
     width: 100%;
+6
 }
+7
 /* 头部 */
+8
 .header {
+9
     width: 100%;
+10
     height: 1000px;
+11
     background: url(../images/header_bg.png) no-repeat;
+12
     background-size: 100% 100%;
+13
     overflow: hidden;
+14
 }
+15
 .header .header_title {
+16
     font-size: 5em;
+17
     font-weight: 300;
+18
     color: #FFF;
+19
     text-align: center;
+20
     margin: 205px 0 80px 0;
+21
 }
+22
 .header p {
+23
     display: block;
+24
     font-size: 1.6em;
+25
     font-weight: 100;
+26
     text-align: center;
+27
     color: rgba(255, 255, 255, 0.8);
+28
     width: 770px;
+29
     margin: 0 auto;
+30
 }
-
+31
+​
+32
 .header .sign {
+33
     border: 1px solid rgba(153, 153, 153, 0.5);
+34
     height: 250px;
+35
     width: 970px;
+36
     margin: 0 auto;
+37
     margin-top: 105px;
+38
 }
+39
 .header .sign h1 {
+40
     font-size: 2em;
+41
     font-weight: 400;
+42
     text-align: center;
+43
     color: #FFF;
+44
     margin: 20px 0 14px 0;
+45
 }
+46
 .header .sign h2 {
+47
     font-size: 1.1em;
+48
     font-weight: 400;
+49
     color: rgba(255, 255, 255, 0.4);
-    text-align: center;
-}
-.header form {
-    margin-top: 40px;
-    text-align: center;
-}
-.header form input {
-    width: 290px;
-    height: 48px;
-    background: none;
-    border: 1px solid rgba(153, 153, 153, 0.5);
-    text-indent: 25px;
-    font-size: 1.5em;
-    line-height: 50px;
-    color: rgba(153, 153, 153, 0.5);
-    margin-right: 30px;
-}
-.header form button{
-    width: 125px;
-    height: 50px;
-    border: none;
-    text-align: center;
-    line-height: 50px;
-    background: #FFF;
-    border-radius: 3px;
-}
+@duanlv26
+Commit changes
+
+Update style.css
+
+Add an optional extended description…
+  Commit directly to the master branch.
+  Create a new branch for this commit and start a pull request. Learn more about pull requests.
+ 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
