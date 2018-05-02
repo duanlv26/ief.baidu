@@ -1,3 +1,7 @@
+html,body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+}
 a:visited,a:link{
     color: #fff;
     text-decoration: none;
@@ -96,18 +100,36 @@ a:hover{
     background: rgb(238, 238 ,238);
 }
 
-.nav_content{
+.nav_content {
+    display: block;
     width: 960px;
-    margin: auto;
-}
-.nav_content div{
-    float: left;
-}
-.nav_content div div{
-    margin: 5px 5px 5px 5px;
-    border:1px solid #BABABA;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 10px 0;
+  }
+  
+.row {
+    display: flex;
+    flex: 1;
+    margin: 5px 0;
+  }
+  
+.row div {
+    flex: 1;
+    border: 1px solid #ccc;
     padding: 80px;
+    text-align: center;
+    margin: 0 5px;
+  }
+.row div:first-child {
+    margin-left: 0;
+  }
+  
+.row div:last-child {
+    margin-right: 0;
 }
+
 .first{
     width: 960px;
 }
