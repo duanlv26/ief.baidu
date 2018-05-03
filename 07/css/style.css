@@ -72,7 +72,6 @@ body {
     line-height: 50px;
     background: #FFF;
     border-radius: 3px;
-    cursor: pointer;
 }
 
 /* 功能 */
@@ -88,7 +87,7 @@ body {
     float: right;
 }
 .fun h2 {
-    margin-top: 80px;
+    padding-top: 80px;
     margin-bottom: 32px;
     font-size: 1.2em;
     text-align: center;
@@ -216,4 +215,234 @@ body {
     border: 1px solid rgba(153, 153, 153, 0.5);
     border-right: none;
     background: url(../images/pad.png) no-repeat;
+}
+
+/* 特性 */
+.features {
+    height: 580px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+.features_head {
+    text-align: center;
+    font-size: 3.5em;
+    font-weight: 100;
+    padding-top: 100px;
+}
+.features_main {
+    width: 1020px;
+    height: 300px;
+    margin: 0 auto;
+}
+.features_main div {
+    float: left;
+    height: 300px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.35em;
+    line-height: 2em;
+}
+.features_main div p {
+    padding-top: 35px;
+}
+
+/* learn */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.learn {
+    padding-top: 115px;
+    width: 1030px;
+    height: 1000px;
+    background: #FFF;
+    margin: 0 auto;
+}
+.learn_main {
+    width: 100%;
+    height: 350px;
+    background: #FFF;
+    margin-bottom: 80px;
+}
+.learn .learn_text {
+    width: 430px;
+    height: 350px;
+    background: #FFF;
+}
+.learn .learn_text h1 {
+    padding: 70px 0 30px 0;
+    font-size: 2em;
+}
+.learn .learn_text p {
+    font-size: 1.5em;
+    width: 365px;
+}
+.learn img {
+    display: block;
+    height: 350px;
+    width: 570px;
+    background: #777;
+    margin-right: 30px;
+}
+
+/* team */
+
+.team {
+    width: 1030px;
+    height: 1085px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.team_text {
+    text-align: center;
+}
+.team_text h1 {
+    font-size: 3.5em;
+    font-weight: 400;
+}
+.team_text p {
+    padding: 30px 0 30px 0;
+    font-size: 1.5em;
+    width: 700px;
+    margin: 0 auto;
+}
+.photo {
+    float: left;
+    width: 470px;
+    height: 340px;
+    margin-left: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* contancts */
+.cont {
+    width: 970px;
+    padding: 70px 30px 0 30px;
+    height: 630px;
+    margin: 0 auto;
+    background: none;
+}
+.cont_left {
+    float: left;
+    height: 558px;
+    width: 468px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.cont_left h1 {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    padding: 45px 0 45px 0;
+}
+.cont_left form {
+    width: 370px;
+    margin: 0 auto;
+}
+.cont_left input {
+    width: 368px;
+    height: 48px;
+    text-indent: 20px;
+    background: none;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    color: #999;
+}
+.cont_left textarea {
+    width: 328px;
+    height: 100px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+    background: none;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    padding: 20px;
+    color: #999;
+    resize: none;
+}
+.cont_left button {
+    height: 48px;
+    width: 368px;
+    text-indent: 20px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+    border-radius: 3px;
+    background: #000;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    line-height: 48px; 
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.cont_right {
+    width: 355px;
+    float: right;
+    margin-right: 30px;
+}
+.cont_right h1 {
+    font-size: 3em;
+    margin: 80px 30px 30px 0px;
+}
+.cont_right h2 {
+    font-size: 1.3em;
+    margin-bottom: 60px;
+}
+.cont_list {
+    width: 355px;
+    height: 45px;
+    margin: 30px 0 30px 0;
+
+}
+.cont_list p{
+    width: 220px;
+    float: right;
+    text-indent: 5px;
+    margin-right: 100px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.cont_list img{
+    float: left;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 420px;
+    background: rgb(19, 19, 19);
+}
+.footer_content {
+    height: 420px;
+    width: 1170px;
+    margin: 0 auto;
+}
+.footer_content ul {
+    width: 25%;
+    float: left;
+    margin-top: 90px;
+    font-size: 1.2em;
+}
+.footer_content li {
+    margin-bottom: 30px;
+    color: #999;
+}
+.footer_content h1 {
+    color: #fff;
+}
+.footer_logo h1 {
+    margin-bottom: 30px;
+}
+.footer_logo span {
+    display: block;
+    width: 100%;
+    height: 20px;
+    background: url(../images/footer-bg.png) no-repeat;
+    background-color: rgb(19, 19, 19)
 }
