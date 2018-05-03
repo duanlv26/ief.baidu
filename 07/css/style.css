@@ -1,5 +1,11 @@
 body {
     font-family:Montserrat;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 /* 头部 */
 .header {
@@ -72,6 +78,7 @@ body {
     line-height: 50px;
     background: #FFF;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 /* 功能 */
@@ -247,6 +254,8 @@ body {
     padding-top: 35px;
 }
 
+
+
 /* learn */
 .fl {
     float: left;
@@ -310,13 +319,63 @@ body {
     margin: 0 auto;
 }
 .photo {
+    position: relative;
     float: left;
     width: 470px;
     height: 340px;
     margin-left: 30px;
     margin-top: 30px;
-    cursor: pointer;
 }
+/* yinying */
+.shadow:hover {
+    transition-duration: 0.5s;
+    opacity: 1;
+}
+.shadow {
+    transition:opacity 0.5s;
+    opacity:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 470px;
+    height: 340px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    /* display: none; */
+}
+.shadow h1 {
+    font-size: 1.8em;
+    color: #FFF;
+    margin-top: 105px;
+    margin-bottom: 10px;
+}
+.shadow p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 30px;
+}
+.shadow ul {
+    width: 270px;
+    height: 60px;
+    margin: 0 auto;
+}
+.shadow ul li {
+    float: left;
+    width: 90px;
+}
+.shadow span {
+    display: block;
+    margin: 0 auto;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    line-height: 52px;
+}
+
+
+
 
 /* contancts */
 .cont {
@@ -330,7 +389,7 @@ body {
     float: left;
     height: 558px;
     width: 468px;
-    border: 1px solid #000;
+    border: 1px solid rgb(153, 153, 153);
     border-radius: 10px;
 }
 .cont_left h1 {
