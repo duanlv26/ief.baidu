@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript</title>
+    <style>
+        table,td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <h1>第十七天到第十八天，“如果”可以“重来”</h1>
     <div class="box">
         <h3>任务1</h3>
             <input id="first-number" type="number" value="9" placeholder="第一个数字" />
@@ -38,7 +44,9 @@
 
     <div class="box">
         <h3>任务4</h3>
-        <p id="result4"></p>
+        <table id="result4">
+            
+        </table>
     </div>
 
 <script>
@@ -134,11 +142,15 @@
     
     function m4(){
         var result4 = document.getElementById('result4');
+        var tr = "";
         for (var i = 1; i <=9; i++) {  
-            for (var j = 1; j <=9; j++) {  
-                result4.innerHTML += (i+"*"+j+"="+(i*j)+"\t");  
+            var td = "";
+            for (var j = 1; j <=i; j++) {  
+                td += "<td>" + (i+"*"+j+"="+(i*j)) +"</td>" ;  
             }
+            tr += '<tr>' + td + '</tr>';
         }  
+        result4.innerHTML = tr;
     }
 
     function sayHi(){
