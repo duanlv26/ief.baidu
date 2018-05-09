@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+</head>
+<body>
+    <div class="box">
+        <h3>任务1</h3>
+            <input id="first-number" type="number" value="9" placeholder="第一个数字" />
+        <input id="second-number" type="number" value="3" placeholder="第二个数字" />
+        <button id="add-btn">加</button>
+        <button id="minus-btn">减</button>
+        <button id="times-btn">乘</button>
+        <button id="divide-btn">除</button>
+        <p id="result1">运算结果</p>
+    </div>
+
+    <hr />
+
+    <div class="box">
+        <h3>任务2</h3>
+        <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+        <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+        <button id="trans-btn">转化为二进制</button>
+        <p id="result2">运算结果</p>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>任务3</h3>
+        <p>请打开控制台</p><button id="m3-btn">start</button>
+        <p id="result3"></p>
+    </div>
+
+    <hr>
+
+    <div class="box">
+        <h3>任务4</h3>
+        <p id="result4"></p>
+    </div>
+
+<script>
+    window.onload = function(){
+        counter();
+        dec2bin();
+        m3();
+        m4();
+        sayHi();
+    }
+
+    function counter(){
+        var oa = document.getElementById('first-number');
+        var ob = document.getElementById('second-number');
+        var add = document.getElementById('add-btn');
+        var minus = document.getElementById('minus-btn');
+        var times = document.getElementById('times-btn');
+        var divide = document.getElementById('divide-btn');  
+        var result1 = document.getElementById('result1');
+
+        add.onclick = function(){
+            var a = parseFloat(oa.value);
+            var b = parseFloat(ob.value);
+            if( !isNaN(oa.value) && !isNaN(ob.value) ){
+                result1.innerHTML = '运算结果' + "&emsp;" + (a+b);
+            }else{
+                console.log('输入有误！')
+            }
+        }
+        minus.onclick = function(){
+            var a = parseFloat(oa.value);
+            var b = parseFloat(ob.value);
+            if( !isNaN(oa.value) && !isNaN(ob.value) ){
+                result1.innerHTML = '运算结果' + "&emsp;" + (a-b);
+            }else{
+                console.log('输入有误！')
+            }
+        }
+        times.onclick = function(){
+            var a = parseFloat(oa.value);
+            var b = parseFloat(ob.value);
+            if( !isNaN(oa.value) && !isNaN(ob.value) ){
+                result1.innerHTML = '运算结果' + "&emsp;" + (a*b);
+            }else{
+                console.log('输入有误！')
+            }
+        }
+        divide.onclick = function(){
+            var a = parseFloat(oa.value);
+            var b = parseFloat(ob.value);
+            if( !isNaN(oa.value) && !isNaN(ob.value) ){
+                if (a == 0){
+                    alert('除数不能等于 0 ！')
+                }else{
+                    result1.innerHTML = '运算结果' + "&emsp;" + (a/b);
+                }
+            }
+        }
+
+
+    }
+
+    function dec2bin() {
+        var trans = document.getElementById('trans-btn');
+        var dec = document.getElementById('dec-number');
+        var result2 = document.getElementById('result2');
+        var bin = document.getElementById('bin-bit');
+        trans.onclick = function(){
+            var num = parseFloat(dec.value);
+            if(num < 0 || isNaN(num) || num%1 !== 0 ){
+                alert("输入必须为一个非负整数");
+            }else{
+                result2.innerHTML = '运算结果' + "&emsp;" + parseInt(num).toString(2);
+                bin.value = parseInt(num).toString(2).length;
+            }
+        }
+    }
+
+    function m3(){
+        var result3 = document.getElementById('result3');
+        var btn = document.getElementById('m3-btn');
+        btn.onclick = function(){
+            for( var i = 1; i < 100; i++ ){
+                if( i%3==0 ){
+                    console.log("PA");
+                }else{
+                    console.log(i);
+                }
+            }
+            btn.onclick = null;
+        }
+    }
+    
+    function m4(){
+        var result4 = document.getElementById('result4');
+        for (var i = 1; i <=9; i++) {  
+            for (var j = 1; j <=9; j++) {  
+                result4.innerHTML += (i+"*"+j+"="+(i*j)+"\t");  
+            }
+        }  
+    }
+
+    function sayHi(){
+        var date = new Date();
+        var hour = date.getHours();
+        var i = hour.toString(10);
+        if(  6 <= i < 12 ){
+            alert('上午好')
+        }else if( i == 12){
+            alert('中午好');
+        }else if( 18 >= i > 12 ){
+            alert('下午好');
+        }else if( 18 < i < 24){
+            alert("晚上好")
+        }else{
+            alert("shuijiao")
+        }
+    }
+</script>
+</body>
+</html>
