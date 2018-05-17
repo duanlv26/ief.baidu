@@ -30,7 +30,7 @@
         .erik {
             width: 100%;
             height: 500px;
-            background: #999;
+            background: #fff;
             font-family: Microsoft YaHei;
             position: relative;
         }
@@ -100,8 +100,7 @@
 
     <div class="line erik">
         <div>
-            <h2>纸上得来终觉浅<br>绝知此事要躬行</h2>
-            <p>我们精心设计了许多编码任务<br>让你可以循序渐进、由浅入深<br>地在实践中掌握技术</p>
+            <h1>学到了</h1>
             <div id="erikface"></div>
         </div>
     </div>
@@ -131,9 +130,14 @@
         var company = document.getElementById('company');
         var companySelect = document.getElementById('company-select');
         
-        if(school.checked){
+        var school = document.getElementById('school');
+        var company = document.getElementById('company');
+        school.onchange = function () {
             schoolSelect.style.display = 'block';
-        }else if(company.checked){
+            companySelect.style.display = 'none';
+        }
+        company.onchange = function () {
+            schoolSelect.style.display = 'none';
             companySelect.style.display = 'block';
         }
 
@@ -186,21 +190,16 @@
 
     (function(){
         var face = document.getElementById('erikface');
-        var bg = document.getElementById('erikface').style.backgroundPositionY;
-        var y = 0;
-        // var st = setInterval(function(){
-        //     if( -5 >= y <= 0){
-        //         y -= 1;
-        //     }else{
-        //         y += 1;
-        //     }
-
-
-            
-        //     console.log(y);
-        // },1000)
-
-
+        var bg = document.getElementById('erikface');
+        var posY=-1;
+        var direction=1;
+        var st = setInterval(function(){
+            posY -= 480 * direction;
+            if (posY < -7680 || posY > -2) {
+                direction *= -1;
+            }
+            bg.style.backgroundPositionY = posY + 'px';
+        }, 150)
 
     })();
 </script>
