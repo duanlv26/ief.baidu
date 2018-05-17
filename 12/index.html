@@ -105,6 +105,8 @@
         </div>
     </div>
 <script>
+    console.log('我好笨啊！！！！');
+    
     (function(){
         var text = document.getElementById('text1');
         var btn = document.getElementById('submit-btn');
@@ -159,46 +161,64 @@
     (function(){
         var btn = document.getElementById('fade-btn');
         var box = document.getElementById('fade-obj');
+        var type = 1;
 
-        btn.onclick = function(){
-            hide(box);
-            this.childNodes[0].nodeValue = '淡入';
+        btn.onclick = function(event){
+            // this.disabled = true;
+            if(type > 0){
+                hide(box);
+                type *= -1;
+            }else if(type < 0){
+                show(box);
+                type *= -1;
+            }
+
         }
 
 
         function hide(obj){
+            btn.disabled = true;
             var num = 10;
             var st = setInterval(function(){
                 num -- ;
                 obj.style.opacity = num/10;
-                if( num <= 0){
+                if( num == 0){
                     clearInterval(st);
+                    btn.childNodes[0].nodeValue = '淡入'
+                    btn.disabled = false;
                 }
-            },30)
+            },50)
         }
+
+
         function show(obj){
-            var num = 10;
+            btn.disabled = true;
+            var num = 0;
             var st = setInterval(function(){
                 num ++ ;
                 obj.style.opacity = num/10;
                 if( num >= 10){
                     clearInterval(st);
+                    btn.childNodes[0].nodeValue = '淡出'
+                    btn.disabled = false;
                 }
-            },30)
+            },50)
         }
+
+
     })();
 
     (function(){
         var face = document.getElementById('erikface');
         var bg = document.getElementById('erikface');
-        var posY=-1;
+        var y = -1;
         var direction=1;
         var st = setInterval(function(){
-            posY -= 480 * direction;
-            if (posY < -7680 || posY > -2) {
+            y -= 480 * direction;
+            if (y < -7680 || y > -2) {
                 direction *= -1;
             }
-            bg.style.backgroundPositionY = posY + 'px';
+            bg.style.backgroundPositionY = y + 'px';
         }, 150)
 
     })();
