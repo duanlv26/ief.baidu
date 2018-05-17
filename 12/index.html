@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第二十到第二十一天：让你和页面对话</title>
+    <style>
+        .line {
+            border-bottom: 5px solid lightcoral;
+            margin: 20px 0;
+        }
+
+        select {
+            display: none;
+        }
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .erik {
+            width: 100%;
+            height: 500px;
+            background: #999;
+            font-family: Microsoft YaHei;
+            position: relative;
+        }
+        #erikface {
+            width: 480px;
+            height: 480px;
+            background-image: url(img/erik.jpg);
+            background-repeat: no-repeat;
+            background-position-y: -0px;
+            position: absolute;
+            top: 20px;
+            right: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="line">
+        <h1>任务1</h1>
+        <input type="text" id="text1" placeholder="请输入">    
+        <button id="submit-btn">Submit</button>
+        <p>输入的内容是：<span id="result1"></span></p>
+    </div>
+
+    <div class="line">
+        <h1>任务2</h1>
+        <label>
+            <input id="school" name="status" type="radio"> School
+        </label>
+        <label>
+            <input id="company" name="status" type="radio"> Company
+        </label>
+
+        <select id="school-select">
+            <option>北京邮电大学</option>
+            <option>黑龙江大学</option>
+            <option>华中科技大学</option>
+        </select>
+
+        <select id="company-select">
+            <option>百度</option>
+            <option>爱奇艺</option>
+        </select>
+    </div>
+
+    <div class="line">
+        <h1>任务3</h1>
+        <ul class="palette">
+            <li style="background-color:crimson"></li>
+            <li style="background-color:bisque"></li>
+            <li style="background-color:blueviolet"></li>
+            <li style="background-color:coral"></li>
+            <li style="background-color:chartreuse"></li>
+            <li style="background-color:darkolivegreen"></li>
+            <li style="background-color:cyan"></li>
+            <li style="background-color:#194738"></li>
+        </ul>
+        
+        <p class="color-picker">点击色块</p>
+        
+    </div>
+
+    <div class="line">
+        <h1>任务4</h1>
+        <span id="fade-obj" style="display:block;width:300px;height:300px;background:#000"></span>
+        <button id="fade-btn">淡出</button>
+    </div>
+
+    <div class="line erik">
+        <div>
+            <h2>纸上得来终觉浅<br>绝知此事要躬行</h2>
+            <p>我们精心设计了许多编码任务<br>让你可以循序渐进、由浅入深<br>地在实践中掌握技术</p>
+            <div id="erikface"></div>
+        </div>
+    </div>
+<script>
+    (function(){
+        var text = document.getElementById('text1');
+        var btn = document.getElementById('submit-btn');
+        var result1 = document.getElementById('result1');
+        
+        btn.onclick = submit;
+        text.onkeydown = function(){
+            if(event.keyCode == 13){
+                submit();
+            }else if(event.keyCode == 27){
+                text.value = '';
+            } 
+        }
+
+        function submit(){
+            result1.innerHTML = text.value;
+        }
+
+    })();
+    (function(){
+        var school = document.getElementById('school');
+        var schoolSelect = document.getElementById('school-select');
+        var company = document.getElementById('company');
+        var companySelect = document.getElementById('company-select');
+        
+        if(school.checked){
+            schoolSelect.style.display = 'block';
+        }else if(company.checked){
+            companySelect.style.display = 'block';
+        }
+
+
+    })();
+    (function(){
+        var colorText = document.getElementsByClassName('color-picker')[0];
+        var palette = document.getElementsByClassName('palette')[0];
+        var li = palette.getElementsByTagName('li');
+        var color;
+        for(var i = 0 ; i < li.length ; i++){
+            li[i].onclick = function(){
+                color = this.style.backgroundColor;
+                colorText.innerHTML = color;
+                colorText.style.color = color;
+            }
+        }
+    })();
+    (function(){
+        var btn = document.getElementById('fade-btn');
+        var box = document.getElementById('fade-obj');
+
+        btn.onclick = function(){
+            hide(box);
+            this.childNodes[0].nodeValue = '淡入';
+        }
+
+
+        function hide(obj){
+            var num = 10;
+            var st = setInterval(function(){
+                num -- ;
+                obj.style.opacity = num/10;
+                if( num <= 0){
+                    clearInterval(st);
+                }
+            },30)
+        }
+        function show(obj){
+            var num = 10;
+            var st = setInterval(function(){
+                num ++ ;
+                obj.style.opacity = num/10;
+                if( num >= 10){
+                    clearInterval(st);
+                }
+            },30)
+        }
+    })();
+
+    (function(){
+        var face = document.getElementById('erikface');
+        var bg = document.getElementById('erikface').style.backgroundPositionY;
+        var y = 0;
+        // var st = setInterval(function(){
+        //     if( -5 >= y <= 0){
+        //         y -= 1;
+        //     }else{
+        //         y += 1;
+        //     }
+
+
+            
+        //     console.log(y);
+        // },1000)
+
+
+
+    })();
+</script>
+</body>
+</html>
